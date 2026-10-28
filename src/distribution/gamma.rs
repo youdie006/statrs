@@ -154,8 +154,6 @@ impl ContinuousCDF<f64, f64> for Gamma {
             0.0
         } else if x.is_infinite() || (x * self.rate).is_infinite() {
             1.0
-        } else if x * self.rate == 0.0 {
-            0.0
         } else {
             gamma::gamma_lr(self.shape, x * self.rate)
         }
@@ -181,8 +179,6 @@ impl ContinuousCDF<f64, f64> for Gamma {
             1.0
         } else if x.is_infinite() || (x * self.rate).is_infinite() {
             0.0
-        } else if x * self.rate == 0.0 {
-            1.0
         } else {
             gamma::gamma_ur(self.shape, x * self.rate)
         }
